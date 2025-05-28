@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+# Medical Case Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A web application designed to help visualize medical case notes by displaying input text, a discharge summary, and highlighting relevant organs on a 3D model.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## Expanding the ESLint configuration
+*   Displays original medical notes.
+*   Shows a clickable discharge summary.
+*   Highlights selected phrases from the summary within the original notes.
+*   Visualizes mentioned organs on an interactive 3D human model.
+*   Uses text analysis to map medical terms to 3D model highlights.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+*   **Frontend**: React, Vite, TypeScript
+*   **3D Graphics**: Three.js, @react-three/fiber, @react-three/drei
+*   **Linting**: ESLint
+*   **Package Management**: npm
+
+## Setup and Running Instructions
+
+1.  **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd medical-case-visualizer
+    ```
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Run development server**:
+    ```bash
+    npm run dev
+    ```
+4.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+5.  **Lint code**:
+    ```bash
+    npm run lint
+    ```
+
+## Project Structure
+
+```
+medical-case-visualizer/
+├── public/
+│   └── body_model.glb         # Static assets, e.g., 3D model
+├── src/
+│   ├── components/            # React components
+│   │   ├── ThreeDModelViewer.tsx
+│   │   ├── InputNotes.tsx
+│   │   └── DischargeSummary.tsx
+│   ├── lib/                   # Core logic
+│   │   └── medicalMapping.ts
+│   ├── App.tsx                # Main application component
+│   └── main.tsx               # Application entry point
+├── package.json               # Project dependencies and scripts
+├── vite.config.ts             # Vite build tool configuration
+└── tsconfig.json              # TypeScript configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## (Optional) Future Enhancements
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+*   Allow users to input their own medical notes.
+*   Dynamic loading/selection of 3D models.
+*   Advanced medical term extraction.
+*   User authentication and data persistence.
