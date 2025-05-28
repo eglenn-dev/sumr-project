@@ -6,18 +6,18 @@ A web application designed to help visualize medical case notes by displaying in
 
 ## Key Features
 
-*   Displays original medical notes.
-*   Shows a clickable discharge summary.
-*   Highlights selected phrases from the summary within the original notes.
-*   Visualizes mentioned organs on an interactive 3D human model.
-*   Uses text analysis to map medical terms to 3D model highlights.
+-   Displays original medical notes.
+-   Shows a clickable discharge summary.
+-   Highlights selected phrases from the summary within the original notes.
+-   Visualizes mentioned organs on an interactive 3D human model.
+-   Uses text analysis to map medical terms to 3D model highlights.
 
 ## Technologies Used
 
-*   **Frontend**: React, Vite, TypeScript
-*   **3D Graphics**: Three.js, @react-three/fiber, @react-three/drei
-*   **Linting**: ESLint
-*   **Package Management**: npm
+-   **Frontend**: React, Vite, TypeScript
+-   **3D Graphics**: Three.js, @react-three/fiber, @react-three/drei
+-   **Linting**: ESLint
+-   **Package Management**: npm
 
 ## Setup and Running Instructions
 
@@ -62,10 +62,3 @@ medical-case-visualizer/
 ├── vite.config.ts             # Vite build tool configuration
 └── tsconfig.json              # TypeScript configuration
 ```
-
-## (Optional) Future Enhancements
-
-*   Allow users to input their own medical notes.
-*   Dynamic loading/selection of 3D models.
-*   Advanced medical term extraction.
-*   User authentication and data persistence.
